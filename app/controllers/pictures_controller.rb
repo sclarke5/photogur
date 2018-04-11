@@ -8,4 +8,12 @@ class PicturesController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def new
+    @picture = Picture.new
+  end
+
+  def create
+    render text: "Received POST requres to '/pictures' with the data URL: #{params}"
+  end
+
 end
