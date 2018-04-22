@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+
+
+  resource :users, only: %i(new create)
+
+  resource :sessions, only: %i(new create destroy)
+
+
+  resources :pictures
+
   root 'pictures#index'
 
-  get 'pictures' => 'pictures#index'
-
-  post 'pictures' => 'pictures#create'
-
-  get 'pictures/new' => 'pictures#new'
-
-  get 'pictures/:id' => 'pictures#show'
 end

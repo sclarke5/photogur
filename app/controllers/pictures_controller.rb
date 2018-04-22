@@ -26,6 +26,6 @@ class PicturesController < ApplicationController
       # otherwise render new.html.erb
       render :new
     end
-  end 
+  end
 
 end
