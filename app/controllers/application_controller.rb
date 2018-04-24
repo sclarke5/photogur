@@ -19,10 +19,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  # def ensure_owns_picture
-  #   unless current_user == @picture.user
-  #     flash[:alert] = "Please log in!"
-  #     redirect_to new_sessions_url
-  # end
-
+  def ensure_owns_picture
+    unless current_user == @picture.user
+      flash[:alert] = "Please log in!"
+      redirect_to new_sessions_url
+    end
+  end
 end
